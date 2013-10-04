@@ -1,0 +1,28 @@
+{
+  "name": "angular-perfect-scrollbar",
+  "version": "0.4.5",
+  "homepage": "https://github.com/jtomaszewski/angular-perfect-scrollbar",
+  "authors": [
+    "itsdrewmiller",
+    "cometcult",
+    "jtomaszewski"
+  ],
+  "description": "Small directive to allow the use of perfect-scrollbar in angular.",
+  "main": "src/angular-perfect-scrollbar.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "angular",
+    "scrollbar",
+    "perfect-scrollbar"
+  ],
+  "dependencies": {
+    "perfect-scrollbar": "~0.4.5"
+  }
+}
