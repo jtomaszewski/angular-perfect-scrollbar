@@ -13,11 +13,17 @@ angular.module('perfect_scrollbar', [])
                 });
 
                 if ($attr.refreshOnChange) {
-                    $scope.$watchCollection($attr.refreshOnChange, function(newNames, oldNames) {
+                    updatePerfectScrollbar = function() {
                         $timeout(function () {
                             $elem.perfectScrollbar('update');
                         }, 10);
-                    });
+                    };
+
+                    if (typeof $scope.$eval($attr.refreshOnChange) == 'object') {
+                        $scope.$watchCollection($attr.refreshOnChange, updatePerfectScrollbar);
+                    } else {
+                        $scope.$watch($attr.refreshOnChange, updatePerfectScrollbar);
+                    }
                 }
             }
         }
