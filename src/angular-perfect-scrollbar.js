@@ -59,6 +59,14 @@ angular.module('perfect_scrollbar', [])
         }, 10);
       };
 
+      // "A not really nice hack" to trigger ngInfiniteScroll loading.
+      // 
+      // IMHO ngInfiniteScroll is the one who should make:
+      // `$(container).parents('ps-container').on('scroll', handler)`
+      $elem.on('scroll', function(){
+        $(window).scroll();
+      });
+
       // Update perfect-scrollbar when `refresh-on-change` attr changes.
       if ($attr.refreshOnChange) {
         if (typeof $scope.$eval($attr.refreshOnChange) == 'object') {
